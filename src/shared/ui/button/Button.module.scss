@@ -1,0 +1,59 @@
+.button {
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  cursor: pointer;
+
+  &Variant {
+    &fill {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      &:hover {
+        background-color: var(--color-primary-dark);
+      }
+    }
+
+    &outline {
+      background-color: transparent;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      &:hover {
+        background-color: var(--color-primary-200);
+      }
+    }
+
+    &text {
+      background-color: transparent;
+      color: var(--color-primary);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    &ghost {
+      background-color: transparent;
+      color: var(--color-primary);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      &:hover {
+        background-color: var(--color-grey-200);
+      }
+    }
+  }
+
+  &Size {
+    &sm {
+      font-size: 0.875rem;
+    }
+    &md {
+      font-size: 1rem;
+    }
+    &lg {
+      font-size: 1.125rem;
+    }
+  }
+}

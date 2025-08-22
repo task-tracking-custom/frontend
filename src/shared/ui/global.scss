@@ -1,0 +1,24 @@
+:root {
+  --color-primary: #0070f3;
+  --color-primary-dark: #005cb3;
+  --color-primary-200: #c4c4c448;
+  --color-primary-300: #a3a3a348;
+  --color-primary-400: #82828248;
+  --color-primary-500: #63636348;
+  --color-primary-600: #44444448;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #f0f0f0;
+  --color-grey-200: #c4c4c448;
+  
+  --color-notion-blue: #2383e2;
+  --color-notion-grey: #e9e9e7;
+  --color-notion-text: #37352f;
+  --color-notion-border: #e9e9e7;
+}
+
+.visually-hidden {
+  opacity: 0;
+  pointer-events: none;
+}

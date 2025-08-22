@@ -1,0 +1,26 @@
+.link {
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &Variant {
+    &default {
+      color: var(--color-notion-blue);
+      border-bottom: 1px solid transparent;
+      
+      &:hover {
+        border-bottom-color: var(--color-notion-blue);
+      }
+    }
+
+    &subtle {
+      color: var(--color-notion-text);
+      opacity: 0.7;
+      
+      &:hover {
+        opacity: 1;
+        text-decoration: underline;
+      }
+    }
+  }
+}
