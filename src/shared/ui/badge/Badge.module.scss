@@ -1,0 +1,30 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  
+  &Variant {
+    &default {
+      background: var(--color-notion-grey);
+      color: var(--color-notion-text);
+    }
+    
+    &success {
+      background: #d3f8d3;
+      color: #0f5132;
+    }
+    
+    &warning {
+      background: #fff3cd;
+      color: #664d03;
+    }
+    
+    &error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+  }
+}
