@@ -10,7 +10,7 @@
   position: relative;
   width: 16px;
   height: 16px;
-  border: 1px solid var(--color-notion-border);
+  border: 1px solid var(--color-grey-light);
   border-radius: 3px;
   background-color: var(--color-white);
   transition: all 0.2s ease;
@@ -29,8 +29,8 @@
 }
 
 .checkboxInput:checked + .checkboxBox {
-  background-color: var(--color-notion-blue);
-  border-color: var(--color-notion-blue);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .checkboxInput:checked + .checkboxBox .checkboxIcon {
@@ -38,6 +38,6 @@
 }
 
 .checkboxInput:focus + .checkboxBox {
-  outline: 2px solid var(--color-notion-blue);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }

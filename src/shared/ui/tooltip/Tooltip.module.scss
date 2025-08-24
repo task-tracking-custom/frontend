@@ -1,7 +1,7 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  
+
   &:hover .tooltipContent {
     opacity: 1;
     visibility: visible;
@@ -10,7 +10,7 @@
 
 .tooltipContent {
   position: absolute;
-  background: var(--color-notion-text);
+  background: var(--color-text);
   color: var(--color-white);
   padding: 6px 8px;
   border-radius: 4px;
@@ -20,7 +20,7 @@
   visibility: hidden;
   transition: all 0.2s ease;
   z-index: 1000;
-  
+
   &Position {
     &top {
       bottom: 100%;
@@ -28,21 +28,21 @@
       transform: translateX(-50%);
       margin-bottom: 4px;
     }
-    
+
     &bottom {
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
       margin-top: 4px;
     }
-    
+
     &left {
       right: 100%;
       top: 50%;
       transform: translateY(-50%);
       margin-right: 4px;
     }
-    
+
     &right {
       left: 100%;
       top: 50%;

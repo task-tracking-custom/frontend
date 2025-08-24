@@ -3,7 +3,7 @@ import { ComponentProps, FC } from "react";
 import styles from "./Link.module.scss";
 
 export type LinkProps = ComponentProps<"a"> & {
-  variant?: "default" | "subtle";
+  variant?: "default";
 };
 
 export const Link: FC<LinkProps> = (props) => {
@@ -11,11 +11,7 @@ export const Link: FC<LinkProps> = (props) => {
 
   return (
     <a
-      className={clsx(
-        styles.link,
-        className,
-        styles[`linkVariant${variant}`]
-      )}
+      className={clsx(styles.link, className, styles[`linkVariant${variant}`])}
       {...rest}
     >
       {children}
