@@ -9,7 +9,6 @@ import {
   Link,
   Card,
   Badge,
-  Avatar,
   Select,
   Textarea,
   Toggle,
@@ -68,9 +67,6 @@ export const HomePage = () => {
         <Link variant="default" href="#">
           Default link
         </Link>
-        <Link variant="subtle" href="#">
-          Subtle link
-        </Link>
       </div>
 
       {/* Cards */}
@@ -85,13 +81,6 @@ export const HomePage = () => {
         <Badge variant="success">Success</Badge>
         <Badge variant="warning">Warning</Badge>
         <Badge variant="error">Error</Badge>
-      </div>
-
-      {/* Avatars */}
-      <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <Avatar size="sm" fallback="S" />
-        <Avatar size="md" fallback="M" />
-        <Avatar size="lg" fallback="L" />
       </div>
 
       {/* Input Variants */}

@@ -8,10 +8,13 @@ export type TextProps = ComponentProps<"p"> & {
 };
 
 export const Text: FC<TextProps> = (props) => {
-  const { children, className, variant = "body", ...rest } = props;
+  const { children, className, variant = "body", as, ...rest } = props;
+
+  const headingVariants = ["h1", "h2", "h3", "h4", "h5", "h6"];
+  const element = headingVariants.includes(variant) && !as ? variant : as;
 
   return createElement(
-    props.as || "p",
+    element ?? "p",
     {
       className: clsx(styles.text, className, styles[`textVariant` + variant]),
       ...rest,

@@ -1,0 +1,7 @@
+.main {
+  display: flex;
+
+  &Content {
+    flex-grow: 1;
+  }
+}

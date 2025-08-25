@@ -1,0 +1,18 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  border-radius: 50%;
+  aspect-ratio: 1;
+
+  &Variant {
+    &default {
+      color: white;
+      background-color: var(--color-primary-light);
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}

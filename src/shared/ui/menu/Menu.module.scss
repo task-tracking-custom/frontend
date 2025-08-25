@@ -1,0 +1,14 @@
+.menu {
+  list-style: none;
+
+  &Item {
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: var(--color-grey-dark);
+
+    &:hover {
+      background-color: var(--color-grey-200);
+    }
+  }
+}

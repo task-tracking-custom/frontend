@@ -5,23 +5,23 @@
   border-radius: 4px;
   font-size: 12px;
   font-weight: 500;
-  
+
   &Variant {
     &default {
-      background: var(--color-notion-grey);
-      color: var(--color-notion-text);
+      background: var(--color-grey-light);
+      color: var(--color-text);
     }
-    
+
     &success {
       background: #d3f8d3;
       color: #0f5132;
     }
-    
+
     &warning {
       background: #fff3cd;
       color: #664d03;
     }
-    
+
     &error {
       background: #f8d7da;
       color: #721c24;

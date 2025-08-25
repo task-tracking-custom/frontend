@@ -1,0 +1,61 @@
+.sidebar {
+  width: 250px;
+  height: 100svh;
+  background-color: var(--color-grey-light);
+  border-right: 1px solid var(--color-grey);
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  &Reduce {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    transform: translateX(50%);
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  &Reduced {
+    width: 50px;
+    padding: 1rem 0;
+  }
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &Item {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &LinkIcon {
+    margin-right: 0.5rem;
+  }
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &Image {
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+}
