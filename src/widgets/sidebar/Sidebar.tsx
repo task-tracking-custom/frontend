@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton, Link, Text } from "@/shared/ui";
+import { IconButton, Link, Text, Tooltip } from "@/shared/ui";
 import styles from "./Sidebar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -40,30 +40,42 @@ export const Sidebar = () => {
       className={clsx(styles.sidebar, !isExpanded && styles.sidebarReduced)}
     >
       <div>
-        <IconButton
-          className={styles.sidebarReduce}
-          onClick={() => setIsExpanded((prev) => !prev)}
+        <Tooltip
+          content={isExpanded ? "Свернуть" : "Развернуть"}
+          as={"div"}
+          className={styles.sidebarReduceButtonTooltip}
         >
-          <FontAwesomeIcon icon={isExpanded ? faAngleLeft : faAngleRight} />
-        </IconButton>
+          <IconButton
+            className={styles.sidebarReduceButton}
+            onClick={() => setIsExpanded((prev) => !prev)}
+          >
+            <FontAwesomeIcon icon={isExpanded ? faAngleLeft : faAngleRight} />
+          </IconButton>
+        </Tooltip>
 
         <nav>
           <Menu className={styles.nav}>
             {navLinks.map((link) => (
-              <MenuItem
-                as={Link}
-                className={styles.navItem}
-                key={link.href}
-                href={link.href}
+              <Tooltip
+                content={link.label}
+                as={"li"}
+                className={styles.navItemTooltip}
               >
-                <FontAwesomeIcon
-                  icon={link.icon}
-                  width={18}
-                  height={18}
-                  className={styles.navLinkIcon}
-                />
-                {isExpanded && link.label}
-              </MenuItem>
+                <MenuItem
+                  as={Link}
+                  key={link.href}
+                  href={link.href}
+                  className={styles.navItem}
+                >
+                  <FontAwesomeIcon
+                    icon={link.icon}
+                    width={18}
+                    height={18}
+                    className={styles.navLinkIcon}
+                  />
+                  {isExpanded && link.label}
+                </MenuItem>
+              </Tooltip>
             ))}
           </Menu>
         </nav>

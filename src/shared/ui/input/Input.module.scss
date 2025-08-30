@@ -37,13 +37,13 @@
   }
   &Size {
     &sm {
-      font-size: 0.875rem;
+      font-size: var(--font-size-sm);
     }
     &md {
-      font-size: 1rem;
+      font-size: var(--font-size-md);
     }
     &lg {
-      font-size: 1.125rem;
+      font-size: var(--font-size-lg);
     }
   }
 }

@@ -1,2 +1,16 @@
 .footer {
+  background-color: var(--color-grey-main);
+  border-top: 1px solid var(--color-grey);
+  padding: 24px 0;
+  margin-top: auto;
+
+  &Content {
+    text-align: center;
+  }
+
+  &Text {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-grey-dark);
+  }
 }

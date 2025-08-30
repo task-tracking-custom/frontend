@@ -1,0 +1,15 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.menu {
+  padding: 10px 6px;
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--color-grey);
+  border-radius: 4px;
+  margin-top: 16px;
+}
