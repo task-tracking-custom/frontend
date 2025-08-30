@@ -7,7 +7,7 @@ import styles from "./layout.module.scss";
 export default function RootLayout(props: { children: ReactNode }) {
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.main}>
         <Sidebar />
 
         <div className={styles.mainContent}>
@@ -15,7 +15,7 @@ export default function RootLayout(props: { children: ReactNode }) {
 
           <Footer />
         </div>
-      </main>
+      </div>
     </>
   );
 }

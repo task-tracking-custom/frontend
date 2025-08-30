@@ -1,16 +1,24 @@
-import { ComponentProps, ReactNode } from "react";
+import { ComponentType, ReactNode } from "react";
 import styles from "./Menu.module.scss";
 import clsx from "clsx";
+import { PropsByAs } from "@/shared/types/styled";
 
-export type MenuProps = ComponentProps<"ul"> & {
+type MenuAsStrings = "ul" | "ol" | "div" | "nav";
+type MenuAs = MenuAsStrings | ComponentType;
+
+export type MenuProps<As extends MenuAs = "ul"> = {
   children: ReactNode;
-};
+  as?: As;
+  className?: string;
+} & PropsByAs<MenuAsStrings, As>;
 
-export const Menu = (props: MenuProps) => {
-  const { children, className, ...rest } = props;
+export const Menu = <As extends MenuAs>(props: MenuProps<As>) => {
+  const { children, as = "ul", className, ...rest } = props;
+  const Component = as;
+
   return (
-    <ul className={clsx(styles.menu, className)} {...rest}>
+    <Component {...rest} className={clsx(styles.menu, className)}>
       {children}
-    </ul>
+    </Component>
   );
 };

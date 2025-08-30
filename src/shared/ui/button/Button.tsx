@@ -10,16 +10,6 @@ export interface ButtonProps extends ComponentProps<"button"> {
 export const Button: FC<ButtonProps> = (props) => {
   const { children, className, variant = "fill", size = "md", ...rest } = props;
 
-  console.log(
-    styles,
-    clsx(
-      styles.button,
-      className,
-      styles[`buttonVariant` + variant],
-      styles[`buttonSize` + size]
-    )
-  );
-
   return (
     <button
       className={clsx(

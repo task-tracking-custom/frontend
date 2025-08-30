@@ -8,7 +8,7 @@ export type SwitchProps = ComponentProps<"label"> & {
 };
 
 export const Switch: FC<SwitchProps> = (props) => {
-  const { children, className, inputProps, boxProps, ...rest } = props;
+  const { className, inputProps, boxProps, ...rest } = props;
 
   return (
     <label className={clsx(styles.switch, className)} {...rest}>
