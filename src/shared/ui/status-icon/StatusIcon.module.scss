@@ -1,0 +1,27 @@
+.statusIcon {
+  aspect-ratio: 1/1;
+  width: 2em;
+  border-radius: 50%;
+  position: absolute;
+  right: -.5em;
+  top: -.5em;
+  outline: 4px solid var(--color-white);
+
+  &Variant {
+    &to-do {
+      background-color: #d6ffa4;
+    }
+
+    &in-progress {
+      background-color: #A8D0FF;
+    }
+
+    &in-review {
+      background-color: #EFA94A;
+    }
+
+    &done {
+      background-color: #3EB489;
+    }
+  }
+}

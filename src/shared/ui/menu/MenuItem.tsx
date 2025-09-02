@@ -1,8 +1,6 @@
 import {
-  ComponentProps,
   ComponentType,
   createElement,
-  FC,
   JSX,
   ReactNode,
 } from "react";
