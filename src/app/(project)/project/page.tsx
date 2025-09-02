@@ -1,4 +1,4 @@
-import {TaskItem} from "@/enities/task";
+import {TaskItem} from "@/entities/task";
 
 export default function ProjectPage() {
   return (
