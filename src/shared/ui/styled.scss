@@ -9,6 +9,7 @@
   --color-primary-600: #44444448;
 
   --color-white: #ffffff;
+  --color-white-200: #c4c4c448;
   --color-black: #000000;
   --color-grey: #f0f0f0;
   --color-grey-200: #c4c4c448;
@@ -17,9 +18,17 @@
   --color-grey-light: rgb(249, 248, 247);
 
   --color-text: rgb(95, 94, 91);
+
+  --border-radius-small: 8px;
+  --border-radius-medium: 12px;
+  --border-radius-large: 16px;
 }
 
 .visually-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }

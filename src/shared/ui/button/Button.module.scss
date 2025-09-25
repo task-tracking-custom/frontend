@@ -1,6 +1,7 @@
 .button {
   transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
   cursor: pointer;
+  font-weight: 700;
 
   &Variant {
     &fill {
@@ -11,6 +12,11 @@
       border-radius: 0.5rem;
       &:hover {
         background-color: var(--color-primary-dark);
+      }
+
+      &.buttonColorblack {
+        background-color: var(--color-black);
+        backdrop-filter: blur(10px);
       }
     }
 

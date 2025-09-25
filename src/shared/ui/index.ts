@@ -14,6 +14,9 @@ export { Tooltip } from "./tooltip/Tooltip";
 export { Modal } from "./modal/Modal";
 export { Dropdown } from "./dropdown/Dropdown";
 export { IconButton } from "./icon-button/IconButton";
+export { Section } from "./section/Section";
+export { SectionContent } from "./section-content/SectionContent";
+export { BlurCard } from "./blur-card/BlurCard";
 
 export type { ButtonProps } from "./button/Button";
 export type { InputProps } from "./input/Input";
@@ -31,3 +34,6 @@ export type { TooltipProps } from "./tooltip/Tooltip";
 export type { ModalProps } from "./modal/Modal";
 export type { DropdownProps } from "./dropdown/Dropdown";
 export type { IconButtonProps } from "./icon-button/IconButton";
+export type { SectionProps } from "./section/Section";
+export type { SectionContentProps } from "./section-content/SectionContent";
+export type { BlurCardProps } from "./blur-card/BlurCard";

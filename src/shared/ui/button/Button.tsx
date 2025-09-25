@@ -1,36 +1,41 @@
 import clsx from "clsx";
-import { ComponentProps, FC } from "react";
+import { ComponentProps, ComponentType, FC } from "react";
 import styles from "./Button.module.scss";
+import { PropsByAs } from "@/shared/types";
 
-export interface ButtonProps extends ComponentProps<"button"> {
+type ButtonAs = "button" | "a" | ComponentType<any>;
+
+export type ButtonProps<As extends ButtonAs = "button"> = {
   variant?: "fill" | "outline" | "text" | "ghost";
   size?: "sm" | "md" | "lg";
-}
+  color?: "black";
+} & PropsByAs<"button", As>;
 
-export const Button: FC<ButtonProps> = (props) => {
-  const { children, className, variant = "fill", size = "md", ...rest } = props;
+export const Button = <As extends ButtonAs>(props: ButtonProps<As>) => {
+  const {
+    children,
+    className,
+    variant = "fill",
+    size = "md",
+    color,
+    as = "button",
+    ...rest
+  } = props;
 
-  console.log(
-    styles,
-    clsx(
-      styles.button,
-      className,
-      styles[`buttonVariant` + variant],
-      styles[`buttonSize` + size]
-    )
-  );
+  const Component = as as ComponentType<any>;
 
   return (
-    <button
+    <Component
       className={clsx(
         styles.button,
         className,
         styles[`buttonVariant` + variant],
-        styles[`buttonSize` + size]
+        styles[`buttonSize` + size],
+        color && styles[`buttonColor` + color]
       )}
       {...rest}
     >
       {children}
-    </button>
+    </Component>
   );
 };
