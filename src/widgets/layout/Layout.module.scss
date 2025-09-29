@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  font-family: "Geist Mono", system-ui, sans-serif;
+  height: 100svh;
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}

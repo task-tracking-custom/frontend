@@ -1,0 +1,37 @@
+.commentsCard {
+  margin-top: 2rem;
+}
+
+.commentsSection {
+  margin-top: 1rem;
+}
+
+.comment {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ddd;
+  flex-shrink: 0;
+}
+
+.commentContent {
+  flex: 1;
+}
+
+.commentText {
+  margin-top: 0.5rem;
+}
+
+.divider {
+  margin: 1rem 0;
+}
+
+.textarea {
+  margin-bottom: 1rem;
+}
