@@ -1,36 +1,52 @@
-import {FC} from "react";
-import {Badge, Card, Text} from "@/shared/ui";
-import {StatusIcon} from "@/shared/ui/status-icon/StatusIcon";
-import Image from "next/image";
+import { FC } from "react";
+import {
+  Badge,
+  Card,
+  Text,
+  Tooltip,
+  PersonItem,
+  StatusIcon,
+} from "@/shared/ui";
 
-import {BadgeProps} from "@/shared/ui";
+import { BadgeProps } from "@/shared/ui";
 
-import styles from './TaskItem.module.scss'
+import styles from "./TaskItem.module.scss";
+import Link from "next/link";
+import { paths } from "@/shared/libs";
 
 export type TaskItemProps = {
-	taskTitle: string;
-	iconVariant?: "to-do" | "in-progress" | "in-review" | "done";
-};
+  taskId: number;
+  taskTitle: string;
+  iconVariant?: "to-do" | "in-progress" | "in-review" | "done";
+} & BadgeProps;
 
-export const TaskItem: FC<TaskItemProps & BadgeProps> = ({taskTitle, iconVariant = "to-do", variant}) => {
+export const TaskItem: FC<TaskItemProps> = ({
+  taskTitle,
+  iconVariant = "to-do",
+  variant,
+  taskId,
+}) => {
   return (
-	  <Card style={{width: "280px", margin: '20px'}} variant="hover">
-		  <StatusIcon variant={iconVariant}/>
-		  <main className={styles.main}>
-			  <Text variant="h3">{taskTitle}</Text>
-		  </main>
-		  <footer className={styles.footer}>
-			  <Badge variant={variant}>Bug</Badge>
-			  <div className={styles.avatarContainer}>
-				  <Image className={styles.avatar}
-						 width={32}
-						 height={32}
-						 src={'https://avatars.githubusercontent.com/u/107411576?v=4'}
-						 alt={'Avatar'}
-				  />
-				  <Text>Mu3aHTp0n</Text>
-			  </div>
-		  </footer>
-	  </Card>
-  )
-}
+    <Card
+      as={Link}
+      variant="hover"
+      className={styles.card}
+      href={paths.getTask(taskId)}
+    >
+      <Tooltip content={iconVariant}>
+        <StatusIcon variant={iconVariant} />
+      </Tooltip>
+      <div className={styles.badgeContainer}>
+        <Badge variant={variant}>Bug</Badge>
+      </div>
+      <div className={styles.main}>
+        <Text as="h3" variant="body">
+          {taskTitle}
+        </Text>
+      </div>
+      <footer className={styles.footer}>
+        <PersonItem />
+      </footer>
+    </Card>
+  );
+};

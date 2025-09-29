@@ -1,6 +1,7 @@
 "use client";
 
-import { IconButton, Link, Text } from "@/shared/ui";
+import { IconButton, Text } from "@/shared/ui";
+import Link from "next/link";
 import styles from "./Sidebar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,7 +14,7 @@ import {
 import { Menu, MenuItem } from "@/shared/ui/menu";
 import Image from "next/image";
 import { useState } from "react";
-import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -36,8 +37,15 @@ export const Sidebar = () => {
   ];
 
   return (
-    <aside
-      className={clsx(styles.sidebar, !isExpanded && styles.sidebarReduced)}
+    <motion.aside
+      className={styles.sidebar}
+      animate={{
+        width: isExpanded ? 250 : 60,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
     >
       <div>
         <IconButton
@@ -62,23 +70,63 @@ export const Sidebar = () => {
                   height={18}
                   className={styles.navLinkIcon}
                 />
-                {isExpanded && link.label}
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.span
+                      initial={{ opacity: 1, width: "auto" }}
+                      animate={{ opacity: 1, width: "auto" }}
+                      exit={{ opacity: 0, width: 0 }}
+                      transition={{ duration: 0.2 }}
+                      style={{
+                        marginLeft: "12px",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {link.label}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
               </MenuItem>
             ))}
           </Menu>
         </nav>
       </div>
 
-      <MenuItem as={"div"} className={styles.avatar}>
+      <MenuItem
+        as={"div"}
+        className={styles.avatar}
+        itemScope
+        itemType="https://schema.org/Person"
+      >
         <Image
           src={"/images/default-avatar.webp"}
           width={20}
           height={20}
           alt={"Default person avatar"}
           className={styles.avatarImage}
+          itemProp="image"
         />
-        {isExpanded && <Text variant="body">Denis Chagin</Text>}
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ opacity: 0, width: 0 }}
+              animate={{ opacity: 1, width: "auto" }}
+              exit={{ opacity: 0, width: 0 }}
+              transition={{ duration: 0.2 }}
+              style={{
+                marginLeft: "8px",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+              }}
+            >
+              <Text variant="body" itemProp="name">
+                Denis Chagin
+              </Text>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </MenuItem>
-    </aside>
+    </motion.aside>
   );
 };

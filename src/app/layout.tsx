@@ -87,6 +87,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div itemScope itemType="https://schema.org/Organization">
+          <meta itemProp="name" content="TaskTracker" />
+          <meta itemProp="description" content="Управление задачами нового поколения" />
+          <meta itemProp="url" content="https://tasktracker.com" />
+        </div>
+        <div itemScope itemType="https://schema.org/WebSite">
+          <meta itemProp="name" content="TaskTracker" />
+          <meta itemProp="url" content="https://tasktracker.com" />
+        </div>
         {children}
       </body>
     </html>

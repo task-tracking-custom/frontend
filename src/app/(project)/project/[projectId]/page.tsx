@@ -1,3 +1,5 @@
+import { TasksListPage } from "@/pages/tasks-list";
+
 export default function ProjectPage() {
-  return <div>Project Page</div>;
+  return <TasksListPage />;
 }

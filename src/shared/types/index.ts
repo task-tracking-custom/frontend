@@ -1,1 +1,1 @@
-export type { PropsByAs } from "./styled";
+export type { PropsByAs, PolymorphicProps } from "./styled";

@@ -4,16 +4,16 @@ import styles from "./LandingFeatures.module.scss";
 const features = [
   {
     title: "Time Tracking",
-    description: "Track time spent on tasks with precision"
+    description: "Track time spent on tasks with precision",
   },
   {
     title: "Team Collaboration",
-    description: "Work together seamlessly with your team"
+    description: "Work together seamlessly with your team",
   },
   {
     title: "Progress Analytics",
-    description: "Visualize your productivity with charts"
-  }
+    description: "Visualize your productivity with charts",
+  },
 ];
 
 export const LandingFeatures = () => {
@@ -23,15 +23,14 @@ export const LandingFeatures = () => {
         <Text variant="h2" color="white">
           Features
         </Text>
+
         <div className={styles.featureGrid}>
           {features.map((feature) => (
             <BlurCard key={feature.title} variant="glass">
               <Text variant="h4" color="white">
                 {feature.title}
               </Text>
-              <Text color="white">
-                {feature.description}
-              </Text>
+              <Text color="white">{feature.description}</Text>
             </BlurCard>
           ))}
         </div>
