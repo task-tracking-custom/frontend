@@ -1,15 +1,21 @@
+"use client";
 import clsx from "clsx";
-import { ComponentProps, FC } from "react";
+import { FC } from "react";
+import ReactSelect, { Props as ReactSelectProps } from "react-select";
 import styles from "./Select.module.scss";
 
-export type SelectProps = ComponentProps<"select">;
+export type SelectProps = ReactSelectProps & {
+  className?: string;
+};
 
-export const Select: FC<SelectProps> = ({ children, className, ...rest }) => {
+export const Select: FC<SelectProps> = ({ className, ...rest }) => {
   return (
-    <div className={styles.selectWrapper}>
-      <select className={clsx(styles.select, className)} {...rest}>
-        {children}
-      </select>
+    <div className={clsx(styles.selectWrapper, className)}>
+      <ReactSelect
+        className={styles.select}
+        classNamePrefix="select"
+        {...rest}
+      />
     </div>
   );
 };

@@ -17,6 +17,10 @@ export { IconButton } from "./icon-button/IconButton";
 export { Section } from "./section/Section";
 export { SectionContent } from "./section-content/SectionContent";
 export { BlurCard } from "./blur-card/BlurCard";
+export { Container } from "./container/Container";
+export { Breadcrumbs } from "./breadcrumbs/Breadcrumbs";
+export { PersonItem } from "./person-item/PersonItem";
+export { StatusIcon } from "./status-icon/StatusIcon";
 
 export type { ButtonProps } from "./button/Button";
 export type { InputProps } from "./input/Input";
@@ -37,3 +41,10 @@ export type { IconButtonProps } from "./icon-button/IconButton";
 export type { SectionProps } from "./section/Section";
 export type { SectionContentProps } from "./section-content/SectionContent";
 export type { BlurCardProps } from "./blur-card/BlurCard";
+export type { ContainerProps } from "./container/Container";
+export type {
+  BreadcrumbsProps,
+  BreadcrumbItem,
+} from "./breadcrumbs/Breadcrumbs";
+export type { PersonItemProps } from "./person-item/PersonItem";
+export type { StatusIconProps } from "./status-icon/StatusIcon";

@@ -1,15 +1,30 @@
 import clsx from "clsx";
-import { ComponentProps, FC } from "react";
+import { ElementType } from "react";
 import styles from "./Card.module.scss";
+import { PolymorphicProps } from "@/shared/types";
 
-export type CardProps = ComponentProps<"div"> & {
-  variant?: "default" | "hover";
-};
+export type CardProps<T extends ElementType = "div"> = PolymorphicProps<
+  T,
+  {
+    variant?: "default" | "hover";
+  }
+>;
 
-export const Card: FC<CardProps> = ({ children, className, variant = "default", ...rest }) => {
+export const Card = <T extends ElementType = "div">({
+  as,
+  children,
+  className,
+  variant = "default",
+  ...rest
+}: CardProps<T>) => {
+  const Component = as || "div";
+
   return (
-    <div className={clsx(styles.card, styles[`cardVariant${variant}`], className)} {...rest}>
+    <Component
+      className={clsx(styles.card, styles[`cardVariant${variant}`], className)}
+      {...rest}
+    >
       {children}
-    </div>
+    </Component>
   );
 };
