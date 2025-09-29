@@ -1,0 +1,11 @@
+.person {
+  display: flex;
+  align-items: center;
+
+  &Image {
+    border-radius: 50%;
+    outline: 2px solid var(--color-primary);
+    max-height: 2rem;
+    margin-right: 0.5em;
+  }
+}
